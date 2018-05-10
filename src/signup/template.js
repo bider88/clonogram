@@ -4,7 +4,7 @@ import yo from 'yo-yo'
 import landing from '../landing'
 
 let signupForm =  yo`
-    <div class="col s12 m7">
+    <div class="col s12 m12 l7">
         <div class="row">
             <div class="signup-box">
                 <h1 class="clonogram">
@@ -13,8 +13,8 @@ let signupForm =  yo`
                 <form class="signup-form">
                     <h2>Registrate para conectar con tus amigos viendo fotos de lo que hacen a diario</h2>
                     <div class="section">
-                        <a href="" class="btn btn-fb hide-on-small-only">Iniciar sesión con Facebook</a>
-                        <a href="" class="btn btn-fb hide-on-med-and-up">Iniciar sesión</a>
+                        <a href="" class="btn btn-fb hide-on-med-and-down">Iniciar sesión con Facebook</a>
+                        <a href="" class="btn btn-fb hide-on-large-only"><i class="fa fa-facebook-official"></i> Iniciar sesión</a>
                     </div>
                     <div class="divider"></div>
                     <div class="section">
@@ -33,6 +33,6 @@ let signupForm =  yo`
             </div>
         </div>
     </div>
-    `;
+    `
 
 export default landing(signupForm)

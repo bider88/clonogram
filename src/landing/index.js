@@ -5,11 +5,11 @@ import yo from 'yo-yo'
 
 export default function landing(box) {
     return yo`
-    <div class="container">
+    <div class="container landing">
         <div class="row">
-            <div class="col s10 push-s1">
+            <div class="col s12 m10 push-m1">
                 <div class="row">
-                    <div class="col m5 hidden-on-small-only">
+                    <div class="col m5 hide-on-med-and-down">
                         <img src="iphone.png" class="responsive-img" alt="clonogram">
                     </div>
                     ${box}
