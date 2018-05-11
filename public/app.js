@@ -9750,6 +9750,36 @@ module.exports = [
 },{}],36:[function(require,module,exports){
 'use strict';
 
+var _templateObject = _taggedTemplateLiteral(['\n    <footer class="site-footer">\n        <div class="container">\n        <div class="row">\n            <div class="col s12 l3 center-align"><a href="#" data-activates="dropdown1" class="dropdown-button btn btn-flat">', '</a>\n            <ul id="dropdown1" class="dropdown-content">\n                <li><a href="#" onclick="', '">', '</a></li>\n                <li><a href="#" onclick="', '">', '</a></li>\n            </ul>\n            </div>\n            <div class="col s12 l3 push-l6 center-align">\xA9 2018 Clonogram</div>\n        </div>\n        </div>\n    </footer>\n'], ['\n    <footer class="site-footer">\n        <div class="container">\n        <div class="row">\n            <div class="col s12 l3 center-align"><a href="#" data-activates="dropdown1" class="dropdown-button btn btn-flat">', '</a>\n            <ul id="dropdown1" class="dropdown-content">\n                <li><a href="#" onclick="', '">', '</a></li>\n                <li><a href="#" onclick="', '">', '</a></li>\n            </ul>\n            </div>\n            <div class="col s12 l3 push-l6 center-align">\xA9 2018 Clonogram</div>\n        </div>\n        </div>\n    </footer>\n']);
+
+var _yoYo = require('yo-yo');
+
+var _yoYo2 = _interopRequireDefault(_yoYo);
+
+var _translate = require('../translate');
+
+var _translate2 = _interopRequireDefault(_translate);
+
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _taggedTemplateLiteral(strings, raw) {
+    return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
+}
+
+var el = (0, _yoYo2.default)(_templateObject, _translate2.default.message('language'), lang.bind(null, 'es'), _translate2.default.message('spanish'), lang.bind(null, 'en-US'), _translate2.default.message('english'));
+function lang(locale) {
+    localStorage.locale = locale;
+    location.reload();
+    return false;
+}
+
+document.body.appendChild(el);
+
+},{"../translate":49,"yo-yo":34}],37:[function(require,module,exports){
+'use strict';
+
 var _page = require('page');
 
 var _page2 = _interopRequireDefault(_page);
@@ -9776,7 +9806,7 @@ function _interopRequireDefault(obj) {
             avatar: 'https://graph.facebook.com/v2.10/1703566599738859/picture?type=normal'
         },
         url: 'office.jpg',
-        likes: 5,
+        likes: 1000000,
         liked: true,
         created_at: new Date()
     }, {
@@ -9785,15 +9815,15 @@ function _interopRequireDefault(obj) {
             avatar: 'https://graph.facebook.com/v2.10/1703566599738859/picture?type=normal'
         },
         url: 'office.jpg',
-        likes: 74,
-        liked: true,
+        likes: 0,
+        liked: false,
         created_at: new Date('2018-05-05')
     }];
 
     (0, _emptyElement2.default)(main).appendChild((0, _template2.default)(pictures));
 });
 
-},{"./template":37,"empty-element":3,"page":32}],37:[function(require,module,exports){
+},{"./template":38,"empty-element":3,"page":32}],38:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9832,7 +9862,7 @@ function homepage(pictures) {
     return (0, _layout2.default)(el);
 }
 
-},{"../layout":40,"../picture-card":41,"yo-yo":34}],38:[function(require,module,exports){
+},{"../layout":41,"../picture-card":42,"yo-yo":34}],39:[function(require,module,exports){
 'use strict';
 
 var _page = require('page');
@@ -9845,13 +9875,15 @@ require('./signup');
 
 require('./signin');
 
+require('./footer');
+
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
 
 (0, _page2.default)();
 
-},{"./homepage":36,"./signin":42,"./signup":44,"page":32}],39:[function(require,module,exports){
+},{"./footer":36,"./homepage":37,"./signin":43,"./signup":45,"page":32}],40:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -9878,20 +9910,24 @@ function landing(box) {
     return (0, _yoYo2.default)(_templateObject, box);
 }
 
-},{"yo-yo":34}],40:[function(require,module,exports){
+},{"yo-yo":34}],41:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n    <div>\n        <nav class="header">\n            <div class="container">\n                <div class="row">\n                    <div class="col s12 m6 offset-m1">\n                        <a href="/" class="brand-logo clonogram">Clonogram</a>\n                    </div>\n                    <div class="col s2 m6 push-s10 push-m10">\n                        <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n                            <i class="fa fa-user" aria-hidden="true"></i>\n                        </a>\n                        <ul id="drop-user" class="dropdown-content">\n                            <li><a href="#">Salir</a></li>\n                        </ul>\n                    </div>\n                </div>\n            </div>\n        </nav>\n        <div class="content">\n            ', '\n        </div>\n    </div>\n    '], ['\n    <div>\n        <nav class="header">\n            <div class="container">\n                <div class="row">\n                    <div class="col s12 m6 offset-m1">\n                        <a href="/" class="brand-logo clonogram">Clonogram</a>\n                    </div>\n                    <div class="col s2 m6 push-s10 push-m10">\n                        <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n                            <i class="fa fa-user" aria-hidden="true"></i>\n                        </a>\n                        <ul id="drop-user" class="dropdown-content">\n                            <li><a href="#">Salir</a></li>\n                        </ul>\n                    </div>\n                </div>\n            </div>\n        </nav>\n        <div class="content">\n            ', '\n        </div>\n    </div>\n    ']);
+var _templateObject = _taggedTemplateLiteral(['\n    <div>\n        <nav class="header">\n            <div class="container">\n                <div class="row">\n                    <div class="col s12 m6 offset-m1">\n                        <a href="/" class="brand-logo clonogram">Clonogram</a>\n                    </div>\n                    <div class="col s2 m6 push-s10 push-m10">\n                        <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n                            <i class="fa fa-user" aria-hidden="true"></i>\n                        </a>\n                        <ul id="drop-user" class="dropdown-content">\n                            <li><a href="#">', '</a></li>\n                        </ul>\n                    </div>\n                </div>\n            </div>\n        </nav>\n        <div class="content">\n            ', '\n        </div>\n    </div>\n    '], ['\n    <div>\n        <nav class="header">\n            <div class="container">\n                <div class="row">\n                    <div class="col s12 m6 offset-m1">\n                        <a href="/" class="brand-logo clonogram">Clonogram</a>\n                    </div>\n                    <div class="col s2 m6 push-s10 push-m10">\n                        <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n                            <i class="fa fa-user" aria-hidden="true"></i>\n                        </a>\n                        <ul id="drop-user" class="dropdown-content">\n                            <li><a href="#">', '</a></li>\n                        </ul>\n                    </div>\n                </div>\n            </div>\n        </nav>\n        <div class="content">\n            ', '\n        </div>\n    </div>\n    ']);
 
 exports.default = layout;
 
 var _yoYo = require('yo-yo');
 
 var _yoYo2 = _interopRequireDefault(_yoYo);
+
+var _translate = require('../translate');
+
+var _translate2 = _interopRequireDefault(_translate);
 
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -9902,17 +9938,17 @@ function _taggedTemplateLiteral(strings, raw) {
 }
 
 function layout(content) {
-    return (0, _yoYo2.default)(_templateObject, content);
+    return (0, _yoYo2.default)(_templateObject, _translate2.default.message('logout'), content);
 }
 
-},{"yo-yo":34}],41:[function(require,module,exports){
+},{"../translate":49,"yo-yo":34}],42:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n            <div class="card ', '">\n                <div class="card-image">\n                    <img class="activator" src="', '">\n                </div>\n                <div class="card-content">\n                    <a href="/user/', '" class="card-title title-card">\n                        <img src="', '" class="circle responsive-img avatar" />\n                        <span class="username">', '</span>\n                    </a>\n                    <small class="right time">', '</small>\n                    <p>\n                        <a class="left" href="#" onclick="', '"><i class="fa fa-heart-o"></i></a>\n                        <a class="left" href="#" onclick="', '"><i class="fa fa-heart"></i></a>\n                        <span class="left likes"> ', ' me gustas</span>\n                    </p>\n                </div>\n            </div>\n        '], ['\n            <div class="card ', '">\n                <div class="card-image">\n                    <img class="activator" src="', '">\n                </div>\n                <div class="card-content">\n                    <a href="/user/', '" class="card-title title-card">\n                        <img src="', '" class="circle responsive-img avatar" />\n                        <span class="username">', '</span>\n                    </a>\n                    <small class="right time">', '</small>\n                    <p>\n                        <a class="left" href="#" onclick="', '"><i class="fa fa-heart-o"></i></a>\n                        <a class="left" href="#" onclick="', '"><i class="fa fa-heart"></i></a>\n                        <span class="left likes"> ', ' me gustas</span>\n                    </p>\n                </div>\n            </div>\n        ']);
+var _templateObject = _taggedTemplateLiteral(['\n            <div class="card ', '">\n                <div class="card-image">\n                    <img class="activator" src="', '">\n                </div>\n                <div class="card-content">\n                    <a href="/user/', '" class="card-title title-card">\n                        <img src="', '" class="circle responsive-img avatar" />\n                        <span class="username">', '</span>\n                    </a>\n                    <small class="right time">', '</small>\n                    <p>\n                        <a class="left" href="#" onclick="', '"><i class="fa fa-heart-o"></i></a>\n                        <a class="left" href="#" onclick="', '"><i class="fa fa-heart"></i></a>\n                        <span class="left likes">', '</span>\n                    </p>\n                </div>\n            </div>\n        '], ['\n            <div class="card ', '">\n                <div class="card-image">\n                    <img class="activator" src="', '">\n                </div>\n                <div class="card-content">\n                    <a href="/user/', '" class="card-title title-card">\n                        <img src="', '" class="circle responsive-img avatar" />\n                        <span class="username">', '</span>\n                    </a>\n                    <small class="right time">', '</small>\n                    <p>\n                        <a class="left" href="#" onclick="', '"><i class="fa fa-heart-o"></i></a>\n                        <a class="left" href="#" onclick="', '"><i class="fa fa-heart"></i></a>\n                        <span class="left likes">', '</span>\n                    </p>\n                </div>\n            </div>\n        ']);
 
 exports.default = function (pic) {
 
@@ -9920,7 +9956,7 @@ exports.default = function (pic) {
 
     function render(picture) {
 
-        return (0, _yoYo2.default)(_templateObject, picture.liked ? 'liked' : '', picture.url, picture.user.username, picture.user.avatar, picture.user.username, rf.format(picture.created_at), like.bind(null, true), like.bind(null, false), picture.likes);
+        return (0, _yoYo2.default)(_templateObject, picture.liked ? 'liked' : '', picture.url, picture.user.username, picture.user.avatar, picture.user.username, _translate2.default.date.format(picture.created_at), like.bind(null, true), like.bind(null, false), _translate2.default.message('likes', { likes: picture.likes }));
     }
 
     function like(liked) {
@@ -9941,6 +9977,10 @@ var _yoYo = require('yo-yo');
 
 var _yoYo2 = _interopRequireDefault(_yoYo);
 
+var _translate = require('../translate');
+
+var _translate2 = _interopRequireDefault(_translate);
+
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -9949,19 +9989,7 @@ function _taggedTemplateLiteral(strings, raw) {
     return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
 }
 
-if (!window.Intl) {
-    window.Intl = require('intl');
-    require('intl/locale-data/jsonp/en-US.js');
-    require('intl/locale-data/jsonp/es.js');
-}
-
-var IntlRelativeFormat = window.IntlRelativeFormat = require('intl-relativeformat');
-require('intl-relativeformat/dist/locale-data/en.js');
-require('intl-relativeformat/dist/locale-data/es.js');
-
-var rf = new IntlRelativeFormat('es');
-
-},{"intl":25,"intl-relativeformat":19,"intl-relativeformat/dist/locale-data/en.js":17,"intl-relativeformat/dist/locale-data/es.js":18,"intl/locale-data/jsonp/en-US.js":27,"intl/locale-data/jsonp/es.js":28,"yo-yo":34}],42:[function(require,module,exports){
+},{"../translate":49,"yo-yo":34}],43:[function(require,module,exports){
 'use strict';
 
 var _page = require('page');
@@ -9986,14 +10014,14 @@ function _interopRequireDefault(obj) {
     (0, _emptyElement2.default)(main).appendChild(_template2.default);
 });
 
-},{"./template":43,"empty-element":3,"page":32}],43:[function(require,module,exports){
+},{"./template":44,"empty-element":3,"page":32}],44:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n    <div class="col s12 m12 l7">\n        <div class="row">\n            <div class="signup-box">\n                <h1 class="clonogram">\n                    Clonogram\n                </h1>\n                <form class="signup-form">\n                    <h2>Inicia sesi\xF3n para conectar con tus amigos viendo fotos de lo que hacen a diario</h2>\n                    <div class="section">\n                        <a href="" class="btn btn-fb hide-on-med-and-down">Iniciar sesi\xF3n con Facebook</a>\n                        <a href="" class="btn btn-fb hide-on-large-only"><i class="fa fa-facebook-official"></i> Iniciar sesi\xF3n</a>\n                    </div>\n                    <div class="divider"></div>\n                    <div class="section">\n                        <input type="text" name="username" placeholder="Nombre de usuario">\n                        <input type="password" name="password" placeholder="Contrase\xF1a">\n                        <button class="btn waves-effect waves-light btn-signup" type="submit">Iniciar sesi\xF3n</button>\n                    </div>\n                </form>\n            </div>\n        </div>\n        <div class="row">\n            <div class="login-box">\n                \xBFNo tienes una cuenta? <a href="/signup">Reg\xEDstrate</a>\n            </div>\n        </div>\n    </div>\n    '], ['\n    <div class="col s12 m12 l7">\n        <div class="row">\n            <div class="signup-box">\n                <h1 class="clonogram">\n                    Clonogram\n                </h1>\n                <form class="signup-form">\n                    <h2>Inicia sesi\xF3n para conectar con tus amigos viendo fotos de lo que hacen a diario</h2>\n                    <div class="section">\n                        <a href="" class="btn btn-fb hide-on-med-and-down">Iniciar sesi\xF3n con Facebook</a>\n                        <a href="" class="btn btn-fb hide-on-large-only"><i class="fa fa-facebook-official"></i> Iniciar sesi\xF3n</a>\n                    </div>\n                    <div class="divider"></div>\n                    <div class="section">\n                        <input type="text" name="username" placeholder="Nombre de usuario">\n                        <input type="password" name="password" placeholder="Contrase\xF1a">\n                        <button class="btn waves-effect waves-light btn-signup" type="submit">Iniciar sesi\xF3n</button>\n                    </div>\n                </form>\n            </div>\n        </div>\n        <div class="row">\n            <div class="login-box">\n                \xBFNo tienes una cuenta? <a href="/signup">Reg\xEDstrate</a>\n            </div>\n        </div>\n    </div>\n    ']);
+var _templateObject = _taggedTemplateLiteral(['\n    <div class="col s12 m12 l7">\n        <div class="row">\n            <div class="signup-box">\n                <h1 class="clonogram">\n                    Clonogram\n                </h1>\n                <form class="signup-form">\n                    <div class="section">\n                        <a href="" class="btn btn-fb hide-on-med-and-down">', '</a>\n                        <a href="" class="btn btn-fb hide-on-large-only"><i class="fa fa-facebook-official"></i> ', '</a>\n                    </div>\n                    <div class="divider"></div>\n                    <div class="section">\n                        <input type="text" name="username" placeholder="', '" />\n                        <input type="password" name="password" placeholder="', '" />\n                        <button class="btn waves-effect waves-light btn-signup" type="submit">', '</button>\n                    </div>\n                </form>\n            </div>\n        </div>\n        <div class="row">\n            <div class="login-box">\n                ', ' <a href="/signup">', '</a>\n            </div>\n        </div>\n    </div>\n    '], ['\n    <div class="col s12 m12 l7">\n        <div class="row">\n            <div class="signup-box">\n                <h1 class="clonogram">\n                    Clonogram\n                </h1>\n                <form class="signup-form">\n                    <div class="section">\n                        <a href="" class="btn btn-fb hide-on-med-and-down">', '</a>\n                        <a href="" class="btn btn-fb hide-on-large-only"><i class="fa fa-facebook-official"></i> ', '</a>\n                    </div>\n                    <div class="divider"></div>\n                    <div class="section">\n                        <input type="text" name="username" placeholder="', '" />\n                        <input type="password" name="password" placeholder="', '" />\n                        <button class="btn waves-effect waves-light btn-signup" type="submit">', '</button>\n                    </div>\n                </form>\n            </div>\n        </div>\n        <div class="row">\n            <div class="login-box">\n                ', ' <a href="/signup">', '</a>\n            </div>\n        </div>\n    </div>\n    ']);
 
 var _yoYo = require('yo-yo');
 
@@ -10003,6 +10031,10 @@ var _landing = require('../landing');
 
 var _landing2 = _interopRequireDefault(_landing);
 
+var _translate = require('../translate');
+
+var _translate2 = _interopRequireDefault(_translate);
+
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -10011,11 +10043,11 @@ function _taggedTemplateLiteral(strings, raw) {
     return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
 }
 
-var signinForm = (0, _yoYo2.default)(_templateObject);
+var signinForm = (0, _yoYo2.default)(_templateObject, _translate2.default.message('signup.facebook'), _translate2.default.message('signup.text'), _translate2.default.message('username'), _translate2.default.message('password'), _translate2.default.message('signup.text'), _translate2.default.message('signup.have-account'), _translate2.default.message('signup.call-to-action'));
 
 exports.default = (0, _landing2.default)(signinForm);
 
-},{"../landing":39,"yo-yo":34}],44:[function(require,module,exports){
+},{"../landing":40,"../translate":49,"yo-yo":34}],45:[function(require,module,exports){
 'use strict';
 
 var _page = require('page');
@@ -10040,14 +10072,14 @@ function _interopRequireDefault(obj) {
     (0, _emptyElement2.default)(main).appendChild(_template2.default);
 });
 
-},{"./template":45,"empty-element":3,"page":32}],45:[function(require,module,exports){
+},{"./template":46,"empty-element":3,"page":32}],46:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n    <div class="col s12 m12 l7">\n        <div class="row">\n            <div class="signup-box">\n                <h1 class="clonogram">\n                    Clonogram\n                </h1>\n                <form class="signup-form">\n                    <h2>Registrate para conectar con tus amigos viendo fotos de lo que hacen a diario</h2>\n                    <div class="section">\n                        <a href="" class="btn btn-fb hide-on-med-and-down">Iniciar sesi\xF3n con Facebook</a>\n                        <a href="" class="btn btn-fb hide-on-large-only"><i class="fa fa-facebook-official"></i> Iniciar sesi\xF3n</a>\n                    </div>\n                    <div class="divider"></div>\n                    <div class="section">\n                        <input type="email" name="email" placeholder="Correo electr\xF3nico">\n                        <input type="text" name="name" placeholder="Nombre completo">\n                        <input type="text" name="username" placeholder="Nombre de usuario">\n                        <input type="password" name="password" placeholder="Contrase\xF1a">\n                        <button class="btn waves-effect waves-light btn-signup" type="submit">Reg\xEDstrate</button>\n                    </div>\n                </form>\n            </div>\n        </div>\n        <div class="row">\n            <div class="login-box">\n                \xBFYa tienes una cuenta? <a href="/signin">Entrar</a>\n            </div>\n        </div>\n    </div>\n    '], ['\n    <div class="col s12 m12 l7">\n        <div class="row">\n            <div class="signup-box">\n                <h1 class="clonogram">\n                    Clonogram\n                </h1>\n                <form class="signup-form">\n                    <h2>Registrate para conectar con tus amigos viendo fotos de lo que hacen a diario</h2>\n                    <div class="section">\n                        <a href="" class="btn btn-fb hide-on-med-and-down">Iniciar sesi\xF3n con Facebook</a>\n                        <a href="" class="btn btn-fb hide-on-large-only"><i class="fa fa-facebook-official"></i> Iniciar sesi\xF3n</a>\n                    </div>\n                    <div class="divider"></div>\n                    <div class="section">\n                        <input type="email" name="email" placeholder="Correo electr\xF3nico">\n                        <input type="text" name="name" placeholder="Nombre completo">\n                        <input type="text" name="username" placeholder="Nombre de usuario">\n                        <input type="password" name="password" placeholder="Contrase\xF1a">\n                        <button class="btn waves-effect waves-light btn-signup" type="submit">Reg\xEDstrate</button>\n                    </div>\n                </form>\n            </div>\n        </div>\n        <div class="row">\n            <div class="login-box">\n                \xBFYa tienes una cuenta? <a href="/signin">Entrar</a>\n            </div>\n        </div>\n    </div>\n    ']);
+var _templateObject = _taggedTemplateLiteral(['\n    <div class="col s12 m12 l7">\n        <div class="row">\n            <div class="signup-box">\n                <h1 class="clonogram">\n                    Clonogram\n                </h1>\n                <form class="signup-form">\n                    <h2>', '</h2>\n                    <div class="section">\n                        <a href="" class="btn btn-fb hide-on-med-and-down">', '</a>\n                        <a href="" class="btn btn-fb hide-on-large-only"><i class="fa fa-facebook-official"></i> ', '</a>\n                    </div>\n                    <div class="divider"></div>\n                    <div class="section">\n                        <input type="email" name="email" placeholder="', '" />\n                        <input type="text" name="name" placeholder="', '" />\n                        <input type="text" name="username" placeholder="', '" />\n                        <input type="password" name="password" placeholder="', '" />\n                        <button class="btn waves-effect waves-light btn-signup" type="submit">', '</button>\n                    </div>\n                </form>\n            </div>\n        </div>\n        <div class="row">\n            <div class="login-box">\n                ', ' <a href="/signin">', '</a>\n            </div>\n        </div>\n    </div>\n    '], ['\n    <div class="col s12 m12 l7">\n        <div class="row">\n            <div class="signup-box">\n                <h1 class="clonogram">\n                    Clonogram\n                </h1>\n                <form class="signup-form">\n                    <h2>', '</h2>\n                    <div class="section">\n                        <a href="" class="btn btn-fb hide-on-med-and-down">', '</a>\n                        <a href="" class="btn btn-fb hide-on-large-only"><i class="fa fa-facebook-official"></i> ', '</a>\n                    </div>\n                    <div class="divider"></div>\n                    <div class="section">\n                        <input type="email" name="email" placeholder="', '" />\n                        <input type="text" name="name" placeholder="', '" />\n                        <input type="text" name="username" placeholder="', '" />\n                        <input type="password" name="password" placeholder="', '" />\n                        <button class="btn waves-effect waves-light btn-signup" type="submit">', '</button>\n                    </div>\n                </form>\n            </div>\n        </div>\n        <div class="row">\n            <div class="login-box">\n                ', ' <a href="/signin">', '</a>\n            </div>\n        </div>\n    </div>\n    ']);
 
 var _yoYo = require('yo-yo');
 
@@ -10057,6 +10089,10 @@ var _landing = require('../landing');
 
 var _landing2 = _interopRequireDefault(_landing);
 
+var _translate = require('../translate');
+
+var _translate2 = _interopRequireDefault(_translate);
+
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
 }
@@ -10065,8 +10101,112 @@ function _taggedTemplateLiteral(strings, raw) {
     return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } }));
 }
 
-var signupForm = (0, _yoYo2.default)(_templateObject);
+var signupForm = (0, _yoYo2.default)(_templateObject, _translate2.default.message('signup.subheading'), _translate2.default.message('signup.facebook'), _translate2.default.message('signup.text'), _translate2.default.message('email'), _translate2.default.message('fullname'), _translate2.default.message('username'), _translate2.default.message('password'), _translate2.default.message('signup.call-to-action'), _translate2.default.message('signup.have-account'), _translate2.default.message('signin'));
 
 exports.default = (0, _landing2.default)(signupForm);
 
-},{"../landing":39,"yo-yo":34}]},{},[38]);
+},{"../landing":40,"../translate":49,"yo-yo":34}],47:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+        value: true
+});
+exports.default = {
+        'likes': '{ likes, plural, ' + '=0 { no likes}' + '=1 { # like}' + 'other { # likes}}',
+        'logout': 'Logout',
+        'english': 'English',
+        'spanish': 'Spanish',
+        'signup.subheading': 'Signup to watch your friends\' pictures sttuding at Clonogram',
+        'signup.facebook': 'Signin with Facebook',
+        'signup.text': 'Signin',
+        'email': 'Email',
+        'username': 'Username',
+        'fullname': 'Name',
+        'password': 'Password',
+        'signup.call-to-action': 'Signup',
+        'signup.have-account': 'Already have an account?',
+        'signin': 'Signin',
+        'signin.not-have-account': 'Don\'t have an account?',
+        'language': 'Language'
+
+        // 0 likes
+        // 1 like
+        // 2 likes
+
+};
+
+},{}],48:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    likes: '{ likes, number} me encorazona',
+    'logout': 'Salir',
+    'english': 'Inglés',
+    'spanish': 'Español',
+    'signup.subheading': 'Regístrate para ver fotos de tus amigos estudiando en Clonogram',
+    'signup.facebook': 'Iniciar sesión con Facebook',
+    'signup.text': 'Iniciar sesión',
+    'email': 'Correo electrónico',
+    'username': 'Nombre de usuario',
+    'fullname': 'Nombre completo',
+    'password': 'Contraseña',
+    'signup.call-to-action': 'Regístrate',
+    'signup.have-account': '¿Tienes una cuenta?',
+    'signin': 'Entrar',
+    'signin.not-have-account': '¿No tienes una cuenta?',
+    'language': 'Idioma'
+};
+
+},{}],49:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _es = require('./es');
+
+var _es2 = _interopRequireDefault(_es);
+
+var _enUS = require('./en-US');
+
+var _enUS2 = _interopRequireDefault(_enUS);
+
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
+
+if (!window.Intl) {
+    window.Intl = require('intl');
+    require('intl/locale-data/jsonp/en-US.js');
+    require('intl/locale-data/jsonp/es.js');
+}
+
+var IntlRelativeFormat = window.IntlRelativeFormat = require('intl-relativeformat');
+var IntlMessageFormat = window.IntlMessageFormat = require('intl-messageformat');
+
+require('intl-relativeformat/dist/locale-data/en.js');
+require('intl-relativeformat/dist/locale-data/es.js');
+
+var rf = new IntlRelativeFormat('es');
+
+var MESSAGE = {};
+
+MESSAGE.es = _es2.default;
+MESSAGE['en-US'] = _enUS2.default;
+
+var locale = localStorage.locale || 'es';
+
+exports.default = {
+    message: function message(text, opts) {
+        opts = opts || {};
+        var msg = new IntlMessageFormat(MESSAGE[locale][text], locale, null);
+        return msg.format(opts);
+    },
+    date: new IntlRelativeFormat(locale)
+};
+
+},{"./en-US":47,"./es":48,"intl":25,"intl-messageformat":10,"intl-relativeformat":19,"intl-relativeformat/dist/locale-data/en.js":17,"intl-relativeformat/dist/locale-data/es.js":18,"intl/locale-data/jsonp/en-US.js":27,"intl/locale-data/jsonp/es.js":28}]},{},[39]);

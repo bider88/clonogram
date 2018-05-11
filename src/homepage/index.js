@@ -13,7 +13,7 @@ page('/', (ctx, next) => {
                 avatar: 'https://graph.facebook.com/v2.10/1703566599738859/picture?type=normal'
             },
             url: 'office.jpg',
-            likes:5,
+            likes: 1000000,
             liked: true,
             created_at: new Date()
         },
@@ -23,8 +23,8 @@ page('/', (ctx, next) => {
                 avatar: 'https://graph.facebook.com/v2.10/1703566599738859/picture?type=normal'
             },
             url: 'office.jpg',
-            likes:74,
-            liked: true,
+            likes: 0,
+            liked: false,
             created_at: new Date('2018-05-05')
         },
     ]

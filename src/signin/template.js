@@ -2,6 +2,7 @@
 
 import yo from 'yo-yo'
 import landing from '../landing'
+import translate from '../translate'
 
 let signinForm =  yo`
     <div class="col s12 m12 l7">
@@ -11,23 +12,22 @@ let signinForm =  yo`
                     Clonogram
                 </h1>
                 <form class="signup-form">
-                    <h2>Inicia sesión para conectar con tus amigos viendo fotos de lo que hacen a diario</h2>
                     <div class="section">
-                        <a href="" class="btn btn-fb hide-on-med-and-down">Iniciar sesión con Facebook</a>
-                        <a href="" class="btn btn-fb hide-on-large-only"><i class="fa fa-facebook-official"></i> Iniciar sesión</a>
+                        <a href="" class="btn btn-fb hide-on-med-and-down">${translate.message('signup.facebook')}</a>
+                        <a href="" class="btn btn-fb hide-on-large-only"><i class="fa fa-facebook-official"></i> ${translate.message('signup.text')}</a>
                     </div>
                     <div class="divider"></div>
                     <div class="section">
-                        <input type="text" name="username" placeholder="Nombre de usuario">
-                        <input type="password" name="password" placeholder="Contraseña">
-                        <button class="btn waves-effect waves-light btn-signup" type="submit">Iniciar sesión</button>
+                        <input type="text" name="username" placeholder="${translate.message('username')}" />
+                        <input type="password" name="password" placeholder="${translate.message('password')}" />
+                        <button class="btn waves-effect waves-light btn-signup" type="submit">${translate.message('signup.text')}</button>
                     </div>
                 </form>
             </div>
         </div>
         <div class="row">
             <div class="login-box">
-                ¿No tienes una cuenta? <a href="/signup">Regístrate</a>
+                ${translate.message('signup.have-account')} <a href="/signup">${translate.message('signup.call-to-action')}</a>
             </div>
         </div>
     </div>

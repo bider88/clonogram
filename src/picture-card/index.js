@@ -1,16 +1,6 @@
 import yo from 'yo-yo'
 
-if (!window.Intl) {
-    window.Intl = require('intl')
-    require('intl/locale-data/jsonp/en-US.js')
-    require('intl/locale-data/jsonp/es.js')
-}
-
-let IntlRelativeFormat = window.IntlRelativeFormat = require('intl-relativeformat')
-require('intl-relativeformat/dist/locale-data/en.js')
-require('intl-relativeformat/dist/locale-data/es.js')
-
-let rf = new IntlRelativeFormat('es');
+import translate from '../translate'
 
 export default function(pic) {
 
@@ -28,11 +18,11 @@ export default function(pic) {
                         <img src="${picture.user.avatar}" class="circle responsive-img avatar" />
                         <span class="username">${picture.user.username}</span>
                     </a>
-                    <small class="right time">${rf.format(picture.created_at)}</small>
+                    <small class="right time">${translate.date.format(picture.created_at)}</small>
                     <p>
                         <a class="left" href="#" onclick="${like.bind(null, true)}"><i class="fa fa-heart-o"></i></a>
                         <a class="left" href="#" onclick="${like.bind(null, false)}"><i class="fa fa-heart"></i></a>
-                        <span class="left likes"> ${picture.likes} me gustas</span>
+                        <span class="left likes">${translate.message('likes', {likes: picture.likes })}</span>
                     </p>
                 </div>
             </div>
