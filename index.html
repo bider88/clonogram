@@ -9,23 +9,16 @@
 <body>
     
 
-    <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="images/office.jpg">
-        </div>
-        <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Card Title
-                <i class="material-icons right">more_vert</i>
-            </span>
-            <p>
-                <a href="#">This is a link</a>
-            </p>
-        </div>
-        <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Card Title
-                <i class="material-icons right">close</i>
-            </span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    <div class="row">
+        <div class="col s12 m10 offset-m1 l6 offset-l3 center-align">
+            <form enctype="multipart/form-data" class="form-upload">
+                <div id="fileName" class="fileUpload btn btn-flat cyan">
+                    <span><i class="fa fa-camera" aria-hidden="true"></i> ${translate.message('upload-picture')}</span>
+                    <input type="file" name="picture" id="file" class="upload" />
+                </div>
+                <button id="btnUpload" type="submit" class="btn btn-flat cyan hide">${translate.message('upload')}</button>
+                <button id="btnCancel" type="button" class="btn btn-flat red hide"><i class="fa fa-times" aria-hidden="true"></i></button>
+            </form>
         </div>
     </div>
 
