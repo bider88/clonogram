@@ -13262,7 +13262,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n    <nav class="header">\n        <div class="container">\n            <div class="row">\n                <div class="col s12 m6 offset-m1">\n                    <a href="/" class="brand-logo clonogram">Clonogram</a>\n                </div>\n                <div class="col s2 m6 push-s10 push-m10">\n                    <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n                        <i class="fa fa-user" aria-hidden="true"></i>\n                    </a>\n                    <ul id="drop-user" class="dropdown-content">\n                        <li><a href="/signin">', '</a></li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </nav>\n'], ['\n    <nav class="header">\n        <div class="container">\n            <div class="row">\n                <div class="col s12 m6 offset-m1">\n                    <a href="/" class="brand-logo clonogram">Clonogram</a>\n                </div>\n                <div class="col s2 m6 push-s10 push-m10">\n                    <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n                        <i class="fa fa-user" aria-hidden="true"></i>\n                    </a>\n                    <ul id="drop-user" class="dropdown-content">\n                        <li><a href="/signin">', '</a></li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </nav>\n']);
+var _templateObject = _taggedTemplateLiteral(['\n    <nav class="header">\n        <div class="container">\n            <div class="row">\n                <div class="col s12 m6">\n                    <a href="/" class="brand-logo clonogram">Clonogram</a>\n                </div>\n                <div class="col s2 offset-s9 m6 offset-m6 right-align">\n                    <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n                        <i class="fa fa-user" aria-hidden="true"></i>\n                    </a>\n                    <ul id="drop-user" class="dropdown-content">\n                        <li><a href="/signin">', '</a></li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </nav>\n'], ['\n    <nav class="header">\n        <div class="container">\n            <div class="row">\n                <div class="col s12 m6">\n                    <a href="/" class="brand-logo clonogram">Clonogram</a>\n                </div>\n                <div class="col s2 offset-s9 m6 offset-m6 right-align">\n                    <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">\n                        <i class="fa fa-user" aria-hidden="true"></i>\n                    </a>\n                    <ul id="drop-user" class="dropdown-content">\n                        <li><a href="/signin">', '</a></li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </nav>\n']);
 
 exports.default = header;
 
@@ -13327,7 +13327,7 @@ function _interopRequireDefault(obj) {
 
 // ctx = contexto
 
-(0, _page2.default)('/', _header2.default, loadPicturesAxios, function (ctx, next) {
+(0, _page2.default)('/', _header2.default, loadPicturesFetch, function (ctx, next) {
     document.title = 'Clonogram';
     var main = document.getElementById('main-container');
     (0, _emptyElement2.default)(main).appendChild((0, _template2.default)(ctx.pictures));
@@ -13348,6 +13348,17 @@ function loadPicturesAxios(ctx, next) {
         next();
     }).catch(function (err) {
         console.log(err);
+    });
+}
+
+function loadPicturesFetch(ctx, next) {
+    fetch('api/pictures').then(function (res) {
+        return res.json();
+    }).then(function (pictures) {
+        ctx.pictures = pictures;
+        next();
+    }).catch(function (err) {
+        return console.log(err);
     });
 }
 

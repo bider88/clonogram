@@ -7,7 +7,7 @@ import axios from 'axios'
 
 // ctx = contexto
 
-page('/', header, loadPicturesAxios, (ctx, next) => {
+page('/', header, loadPicturesFetch, (ctx, next) => {
     document.title = 'Clonogram'
     let main = document.getElementById('main-container')
     empty(main).appendChild(template(ctx.pictures))
@@ -34,4 +34,14 @@ function loadPicturesAxios(ctx, next) {
         .catch(err => {
             console.log(err);
         })
+}
+
+function loadPicturesFetch(ctx, next) {
+    fetch('api/pictures')
+        .then(res => res.json())
+        .then( pictures => {
+            ctx.pictures = pictures
+            next()
+        })
+        .catch( err => console.log(err))
 }
