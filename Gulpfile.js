@@ -20,7 +20,15 @@ gulp.task('assets', function() {
 })
 
 function compile(watch) {
-    var bundle = browserify('./src/index.js');
+    var bundle = browserify('./src/index.js', { debug: true });
+
+    if (watch) {
+        bundle = watchify(bundle);
+        bundle.on('update', function() {
+            console.log('--> Bundling...');
+            rebundle();
+        });
+    }
 
     function rebundle() {
         bundle
@@ -33,14 +41,6 @@ function compile(watch) {
         .pipe(source('index.js'))
         .pipe(rename('app.js'))
         .pipe(gulp.dest('public')); 
-    }
-
-    if (watch) {
-        bundle = watchify(bundle);
-        bundle.on('update', function() {
-            console.log('--> Bundling...');
-            rebundle();
-        });
     }
 
     rebundle();
