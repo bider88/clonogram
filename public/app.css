@@ -7129,3 +7129,14 @@ body {
 
 .spinner-heading {
   margin-top: 60px; }
+
+.modal img {
+  max-width: 100%;
+  max-height: 90%; }
+
+.modal .fa-heart {
+  display: inline-block; }
+
+.modal .modal-likes i {
+  color: #f44336;
+  font-size: 20px; }

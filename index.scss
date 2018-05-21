@@ -212,3 +212,17 @@ $avatar-size: 48px;
 .spinner-heading {
 	margin-top: 60px;
 }
+
+.modal {
+	img {
+		max-width: 100%;
+		max-height: 90%;
+	}
+	.fa-heart {
+		display: inline-block;
+	} 
+	.modal-likes i {       
+  		color: $clonogram-red;
+	 	font-size: 20px;
+	}
+}
