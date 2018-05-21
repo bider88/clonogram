@@ -14,7 +14,7 @@ export default function(pic) {
                     <img class="activator" src="${picture.url}">
                 </div>
                 <div class="card-content">
-                    <a href="/user/${picture.user.username}" class="card-title title-card">
+                    <a href="/${picture.user.username}" class="card-title title-card">
                         <img src="${picture.user.avatar}" class="circle responsive-img avatar" />
                         <span class="username">${picture.user.username}</span>
                     </a>

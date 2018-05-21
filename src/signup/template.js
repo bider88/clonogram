@@ -1,5 +1,3 @@
-'use strict';
-
 import yo from 'yo-yo'
 import landing from '../landing'
 import translate from '../translate'

@@ -8,7 +8,7 @@ var watchify = require('watchify');
 
 // Define la tarea de donde va a tomar los estilos, depues con que va ser procesado y finalmente en donde lo colocará
 gulp.task('styles', function() {
-    gulp.src('./index.scss')
+    gulp.src('index.scss')
         .pipe(sass())
         .pipe(rename('app.css'))
         .pipe(gulp.dest('public'));
