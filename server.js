@@ -43,8 +43,8 @@ app.get('/api/pictures', function (req, res) {
                 avatar: 'https://graph.facebook.com/v2.10/1703566599738859/picture?type=normal'
             },
             url: 'office.jpg',
-            likes: 1000001,
-            liked: true,
+            likes: 0,
+            liked: false,
             created_at: new Date().getTime()
         },
         {
@@ -53,8 +53,8 @@ app.get('/api/pictures', function (req, res) {
                 avatar: 'https://graph.facebook.com/v2.10/1703566599738859/picture?type=normal'
             },
             url: 'office.jpg',
-            likes: 0,
-            liked: false,
+            likes: 1,
+            liked: true,
             created_at: new Date('2018-05-05').getTime()
         },
     ]

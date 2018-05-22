@@ -5,6 +5,8 @@ import request from 'superagent'
 import header from '../header'
 import axios from 'axios'
 import spinner from '../spinner'
+import webcam from 'webcamjs'
+import picture from '../picture-card'
 
 // ctx = contexto
 
@@ -12,6 +14,59 @@ page('/', loading, header, asyncLoadPictures, (ctx, next) => {
     document.title = 'Clonogram'
     let main = document.getElementById('main-container')
     empty(main).appendChild(template(ctx.pictures))
+
+    const picturePreview = $('#picture-preview')
+    const cameraInput = $('#camera-input')
+    const cancelPicture = $('#cancelPicture')
+    const shootButton = $('#shoot')
+    const uploadButton = $('#uploadButton')
+
+    function reset() {
+        picturePreview.addClass('hide');
+        cameraInput.removeClass('hide');
+        cancelPicture.addClass('hide');
+        shootButton.removeClass('hide');
+        uploadButton.addClass('hide');
+    }
+
+    cancelPicture.click(reset)
+
+    $('.modal').modal({
+        ready: () => {
+            webcam.attach('#camera-input')
+            shootButton.click(() => {
+                webcam.snap( data_uri => {
+                    picturePreview.html(`<img src="${data_uri}"/>`)
+                    picturePreview.removeClass('hide')
+                    cameraInput.addClass('hide')
+                    cancelPicture.removeClass('hide')
+                    shootButton.addClass('hide')
+                    uploadButton.removeClass('hide')
+                    uploadButton.off('click')
+                    uploadButton.click(()=> {
+                        const pic = {
+                            url: data_uri,
+                            likes: 0,
+                            liked: false,
+                            createdAt: +new Date(),
+                            user: {
+                                username: 'bider88',
+                                avatar: 'https://graph.facebook.com/v2.10/1703566599738859/picture?type=normal'
+                            }
+                        }
+
+                        $('#picture-cards').prepend(picture(pic))
+                        reset()
+                        $('#modalCamera').modal('close');
+                    })
+                })
+            })
+        },
+        complete: () => {
+            webcam.reset()
+            reset()
+        }
+    });
 })
 
 function loading(ctx, next) {
