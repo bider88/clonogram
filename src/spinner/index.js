@@ -1,7 +1,7 @@
 import yo from 'yo-yo'
 
 export default yo`
-    <div class="row spinner-heading">
+    <div class="row spinner">
         <div class="col s12 center-align">
             <div class="preloader-wrapper small active">
                 <div class="spinner-layer spinner-blue">
