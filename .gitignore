@@ -59,5 +59,9 @@ typings/
 
 
 uploads/*
+/public
+env.sh
 !uploads/.empty
+npm-debug.log
+config.js
 
